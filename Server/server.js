@@ -9,7 +9,13 @@ db.once('open', () => console.log('Connected to Database'));
 app.use(express.json());
 // using cors to allow cross origin resource sharing
 const cors = require('cors');
-app.use(cors());
+// app.use(cors());
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 // using body-parser to parse JSON bodies into JS objects
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());

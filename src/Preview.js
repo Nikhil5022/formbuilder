@@ -13,7 +13,7 @@ export default function Preview() {
 
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/getFillData`)
+        axios.get(`https://formbuilder-zeta.vercel.app/getFillData`)
             .then(res => {
                 setData(res.data);
                 setCategorizes(res.data?.categorizes || []);

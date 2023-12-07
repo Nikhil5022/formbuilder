@@ -27,17 +27,32 @@ function App() {
     setComprehensions(updatedComprehensions);
   }
 
-  const saveData = () => {
+  const saveData = async () => {
     const data = {
       clozes,
       categorizes,
       comprehensions
     };
-    axios.post(`${process.env.REACT_APP_API_URL}/postFillData`, data)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+    // axios.post(`https://formbuilder-zeta.vercel.app/postFillData`, data)
+    //   .then(res => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //   })
+    // https://formbuilder-b93sruerv-nikhil5022s-projects.vercel.app
+     const res =  await axios.post(`https://formbuilder-b93sruerv-nikhil5022s-projects.vercel.app/postFillData`, data)
+     console.log(res);
+      // fetch("http://localhost:4000/postFillData",{
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(data),
+      // }).then((response) => response.json())
+      // .then((data) => {
+      //   console.log('Success:', data);
+      // }).catch((error) => {
+      //   console.error('Error:', error);
+      // })
 
     alert('Data saved successfully');
   };
