@@ -38,6 +38,8 @@ function App() {
         console.log(res);
         console.log(res.data);
       })
+
+    alert('Data saved successfully');
   };
  
   return (
