@@ -49,7 +49,7 @@ function App() {
       <Comprehension comprehensions={comprehensions} setComprehensions={handleComprehensionChange} />
 
       <button className='border-2 border-gray-500 p-2 m-2' onClick={saveData} >Save</button>
-      <a href="/preview">Preview</a>
+      <a href="/preview" className='border-2 border-gray-500 p-2 m-2'>Preview</a>
     </>
   );
 }
