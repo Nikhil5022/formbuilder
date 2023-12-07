@@ -33,7 +33,7 @@ function App() {
       categorizes,
       comprehensions
     };
-    axios.post("https://formbuilder-zeta.vercel.app/postFillData", data)
+    axios.post(`${process.env.REACT_APP_API_URL}/postFillData`, data)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -44,6 +44,7 @@ function App() {
  
   return (
     <>
+    {console.log(process.env.REACT_APP_API_URL)}
       <Categorize categorizes={categorizes} setCategorizes ={handleCategorizeChange}/>
       <Cloze clozes={clozes} onClozeChange={handleClozeChange}/>
       <Comprehension comprehensions={comprehensions} setComprehensions={handleComprehensionChange} />

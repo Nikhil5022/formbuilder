@@ -13,7 +13,7 @@ export default function Preview() {
 
 
     useEffect(() => {
-        axios.get("https://formbuilder-zeta.vercel.app/getFillData")
+        axios.get(`${process.env.REACT_APP_API_URL}/getFillData`)
             .then(res => {
                 setData(res.data);
                 setCategorizes(res.data?.categorizes || []);
@@ -81,7 +81,7 @@ export default function Preview() {
             comprehensionsData
         };
         console.log(collectedData);
-        axios.post("https://formbuilder-zeta.vercel.app/postSubmitData", collectedData)
+        axios.post(`${process.env.REACT_APP_API_URL}/postSubmitData`, collectedData)
         alert('Data submitted successfully');
     };
 
