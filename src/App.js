@@ -33,7 +33,7 @@ function App() {
       categorizes,
       comprehensions
     };
-    axios.post('http://localhost:4000/postFillData', data)
+    axios.post("https://formbuilder-zeta.vercel.app/postFillData", data)
       .then(res => {
         console.log(res);
         console.log(res.data);
