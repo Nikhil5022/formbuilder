@@ -82,6 +82,7 @@ export default function Preview() {
         };
         console.log(collectedData);
         axios.post('http://localhost:4000/postSubmitData', collectedData)
+        alert('Data submitted successfully');
     };
 
     return (
